@@ -1,0 +1,38 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/lugares">Lugares</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{lugar.nombre}}</li>
+  </ol>
+</nav>
+
+<div class="container">
+	<h1>{{lugar.nombre}}</h1>
+	<hr />
+	<h5>{{lugar.distancia}} km</h5>
+	<br />
+
+  	<div class="row">
+  		<div class="col-4">
+			<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+				<div class="card-body">
+				    <h5 class="card-title">
+						{{lugar.descripcion}}
+					</h5>
+				    <p class="card-text">
+				    	Suscripción: <b>{{lugar.plan}}</b>
+					</p>
+				</div>
+			</div>
+		</div>
+
+  		<div class="col-8">
+			<div>
+				<!-- this creates a google map on the page with the given lat/lng from -->
+				<!-- the component as the initial center of the map: -->
+				<agm-map [latitude]="lugar.lat" [longitude]="lugar.lng">
+				  <agm-marker [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>  
+				</agm-map>
+			</div>
+		</div>
+	</div>
+</div>

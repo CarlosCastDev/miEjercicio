@@ -1,0 +1,11 @@
+body
+{
+  background-image: url(/assets/bg3.png);
+  background-position: 50%50%;
+  background-size: cover;
+  height: 100vh;
+}
+
+#form-contacto{
+  background: rgba(255, 255, 255, 0.5);
+}
